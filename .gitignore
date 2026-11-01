@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs
+/.StudentGradebookConsole\bin
+/.StudentGradebookConsole\obj
+/.StudentGradebookLibrary\bin
+/.StudentGradebookLibrary\obj
