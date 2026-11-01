@@ -1,0 +1,12 @@
+/Users/benhoelting/Projects/CS3020-StudentGradebook/bin/Debug/net10.0/StudentGradebook
+/Users/benhoelting/Projects/CS3020-StudentGradebook/bin/Debug/net10.0/StudentGradebook.deps.json
+/Users/benhoelting/Projects/CS3020-StudentGradebook/bin/Debug/net10.0/StudentGradebook.runtimeconfig.json
+/Users/benhoelting/Projects/CS3020-StudentGradebook/bin/Debug/net10.0/StudentGradebook.dll
+/Users/benhoelting/Projects/CS3020-StudentGradebook/bin/Debug/net10.0/StudentGradebook.pdb
+/Users/benhoelting/Projects/CS3020-StudentGradebook/obj/Debug/net10.0/StudentGradebook.GeneratedMSBuildEditorConfig.editorconfig
+/Users/benhoelting/Projects/CS3020-StudentGradebook/obj/Debug/net10.0/StudentGradebook.csproj.CoreCompileInputs.cache
+/Users/benhoelting/Projects/CS3020-StudentGradebook/obj/Debug/net10.0/StudentGradebook.dll
+/Users/benhoelting/Projects/CS3020-StudentGradebook/obj/Debug/net10.0/refint/StudentGradebook.dll
+/Users/benhoelting/Projects/CS3020-StudentGradebook/obj/Debug/net10.0/StudentGradebook.pdb
+/Users/benhoelting/Projects/CS3020-StudentGradebook/obj/Debug/net10.0/StudentGradebook.genruntimeconfig.cache
+/Users/benhoelting/Projects/CS3020-StudentGradebook/obj/Debug/net10.0/ref/StudentGradebook.dll
