@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Text.Json;
+using System.IO;
 
 
 
@@ -10,12 +12,12 @@ namespace StudentGradebookLibrary
     {
         // Interface methods for StudentManager class
 
-         void Create();
-         void Get();
-         void DisplayAllStudents();
+        void Create(string name);
+        void Get();
+        void DisplayAllStudents();
 
-         void Delete(Student student);
-         void Update(Student student);
+        void Delete(Student student);
+        void Update(Student student);
 
      
     }
@@ -33,14 +35,43 @@ namespace StudentGradebookLibrary
         }
 
         // Implement Methods from iStudentManager interface below
-         public void Create()
+        public void Create(string name)
         {
-            
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                Console.WriteLine("Name cannot be empty!");
+                return;
+            }
+
+            Student student = new Student(name);
+
+            Students.Add(student);
+
+            string json = JsonSerializer.Serialize(
+                Students,
+                new JsonSerializerOptions { WriteIndented = true }
+            );
+
+            File.WriteAllText("gradebook.json", json);
+
+            Console.WriteLine("Student created successfully.");
         }
+
         public void Get()
         {
-            
+            if (File.Exists("gradebook.json"))
+            {
+                string json = File.ReadAllText("gradebook.json");
+
+                Students = JsonSerializer.Deserialize<List<Student>>(json)
+                           ?? new List<Student>();
+            }
+            else
+            {
+                Students = new List<Student>();
+            }
         }
+
         public void DisplayAllStudents()
         {
             
