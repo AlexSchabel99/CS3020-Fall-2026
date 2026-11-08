@@ -4,7 +4,10 @@ using System.Text;
 
 namespace StudentGradebookLibrary.Courses
 {
-    internal class Semester
+    internal enum  Semester
     {
+        Spring,
+        Summer,
+        Fall
     }
 }

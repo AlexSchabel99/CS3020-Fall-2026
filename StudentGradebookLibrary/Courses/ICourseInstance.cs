@@ -6,12 +6,12 @@ namespace StudentGradebookLibrary.Courses
 {
     internal interface ICourseInstance
     {
-        int CourseInstanceID();
-        int CourseID();
+        Guid CourseInstanceID { get; set; }
+        Guid  CourseID { get; set;  }
 
-        string CourseTerm();
+        Semester CourseTerm { get; set; }
 
-        int CourseYear();
+        int CourseYear { get; set;  }
 
     }
 }

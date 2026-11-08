@@ -7,9 +7,9 @@ namespace StudentGradebookLibrary.Courses
     internal interface ICourse
     {
         string CourseName { get; set; }
-        int CourseID { get; set; }
+        Guid  CourseID { get; set; }
 
         string Description { get; set; }
-
+        
     }
 }
