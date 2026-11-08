@@ -8,9 +8,9 @@ namespace StudentGradebookLibrary.Courses
         private readonly List<CourseInstance> _courseInstances = new();
 
         // Schedule an instance of an existing course.
-        public CourseInstance Create(Guid courseId, string term, int year)
+        public CourseInstance Create(Guid courseId, Semester semester, int year)
         {
-            var instance = new CourseInstance(Guid.NewGuid(), courseId, term, year);
+            var instance = new CourseInstance(Guid.NewGuid(), courseId, semester, year);
             _courseInstances.Add(instance);
             return instance;
         }
