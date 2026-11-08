@@ -14,8 +14,8 @@ namespace StudentGradebookLibrary
 
         void Create(string name);
         void Get();
+        Student? Get(Guid studentId);
         void DisplayAllStudents();
-
         void Delete(Student student);
         void Update(Student student);
 
@@ -72,6 +72,16 @@ namespace StudentGradebookLibrary
             }
         }
 
+        
+        // Returns a student based on the ID 
+        public Student? Get(Guid studentId)
+        {
+            // Searched the list for a matching student
+            Student? student = Students.Find(s => s.StudentID == studentId);
+
+            return student;
+        }
+
         public void DisplayAllStudents()
         {
             
@@ -81,8 +91,35 @@ namespace StudentGradebookLibrary
         {
             
         }
+
+        // Updates student information 
         public void Update(Student student)
         {
+
+            // Finds student based on ID
+            Student? existingStudent = Get(student.StudentID);
+
+            // Stops if there is no matches 
+            if (existingStudent == null)
+            {
+                Console.WriteLine("Student not found");
+                return;
+            }
+
+            // Updates the students information 
+            existingStudent.Name = student.Name;
+            existingStudent.Marks = student.Marks;
+
+            // Serialize the list for JSON
+            string json = JsonSerializer.Serialize(
+                Students,
+                new JsonSerializerOptions { WriteIndented = true}
+            );
+
+            // Saves the changes 
+            File.WriteAllText("gradebook.json", json);
+
+            Console.WriteLine("Student updated successfully!");
             
         }
 
