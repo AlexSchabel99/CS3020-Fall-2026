@@ -27,11 +27,9 @@ namespace StudentGradebookLibrary
     {
         List<Student> Students;
 
-
         public StudentManager(List<Student> students)
         {
            this.Students = students;
-  
         }
 
         // Implement Methods from iStudentManager interface below
@@ -79,11 +77,47 @@ namespace StudentGradebookLibrary
 
         public void Delete(Student student)
         {
-            
+            // Find a student with a matching name
+            int replacementIndex = Students.FindIndex(s => s.Name == student.Name);
+
+            if (replacementIndex != -1)
+            {
+                Students.RemoveAt(replacementIndex);
+
+                string json = JsonSerializer.Serialize(
+                    Students,
+                    new JsonSerializerOptions { WriteIndented = true }
+                );
+
+                File.WriteAllText("gradebook.json", json);
+            }
+            else
+            {
+                Console.WriteLine("Student not found.");
+            }
         }
+
         public void Update(Student student)
         {
-            
+            // Find a student with a matching name
+            int replacementIndex = Students.FindIndex(s => s.Name == student.Name);
+
+            // If the index has been found, replace that element with new student
+            if (replacementIndex != -1)
+            {
+                Students[replacementIndex] = student;
+
+                string json = JsonSerializer.Serialize(
+                    Students,
+                    new JsonSerializerOptions { WriteIndented = true }
+                );
+
+                File.WriteAllText("gradebook.json", json);
+            }
+            else
+            {
+                Console.WriteLine("Student not found.");
+            }
         }
 
 
