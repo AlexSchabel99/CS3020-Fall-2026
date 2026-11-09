@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StudentGradebookLibrary
 {
-    internal class Student
+    public class Student
     {
         public string Name {  get; set; }
         public List<SubjectGrade> Marks { get; set; }
