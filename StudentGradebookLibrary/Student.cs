@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 
 namespace StudentGradebookLibrary
 {
     public class Student : IStudent
     {
-        public Guid StudentID { get; set; }
+        public Guid StudentId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
     }
